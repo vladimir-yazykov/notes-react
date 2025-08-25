@@ -1,16 +1,17 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import { AppProvider } from "./components/AppProvider";
-import { Container } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import { NoteInput } from "./components/NoteInput/NoteInput";
+import { NotesList } from "./components/NotesList/NotesList";
 
 function App() {
   return (
     <AppProvider>
       <Container>
-        <NoteInput />
+        <Grid container direction="column" gap={2}>
+          <NotesList />
+          <NoteInput />
+        </Grid>
       </Container>
     </AppProvider>
   );

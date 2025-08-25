@@ -6,6 +6,8 @@ const notesAdapter = createEntityAdapter({
   sortComparer: (a, b) => a.id.localeCompare(b.id),
 });
 
+const selectors = notesAdapter.getSelectors();
+
 const notes = createSlice({
   name: "notes",
   initialState: notesAdapter.getInitialState(),
@@ -14,7 +16,12 @@ const notes = createSlice({
     removeNote: notesAdapter.removeOne,
     updateNote: notesAdapter.updateOne,
   },
+  selectors: {
+    selectNotes: selectors.selectAll,
+  },
 });
+
+export const { selectNotes } = notes.selectors;
 
 export const { addNote, removeNote, updateNote } = notes.actions;
 
