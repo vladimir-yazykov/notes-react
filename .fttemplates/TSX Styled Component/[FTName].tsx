@@ -1,4 +1,4 @@
-import * as S from './<FTName>.components';
+import * as C from './<FTName>.components';
 
 export function <FTName>(props: {}) {
   return <></>
